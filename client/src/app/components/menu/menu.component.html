@@ -1,0 +1,30 @@
+<div *ngIf="isMenuVisible">
+   <mat-toolbar color="primary" class="mat-elevation-z8">
+      <button (click)="drawer.toggle()" mat-icon-button>
+         <mat-icon>menu</mat-icon>
+      </button>
+      <span class="example-spacer"></span>
+      <button mat-button   routerLink="/login"><mat-icon>logout</mat-icon></button>
+   </mat-toolbar>
+   <mat-drawer-container autosize>
+      <mat-drawer #drawer opened="true" position="start" mode="side">
+         <mat-nav-list>
+            <mat-list-item>
+               <button class="home-btn" mat-button routerLink=""><mat-icon>home</mat-icon> Home</button>
+            </mat-list-item>
+            <mat-list-item *ngIf="isAdmin">
+               <button mat-button routerLink="admin"><mat-icon>verified_user</mat-icon> Admin Dashboard</button>
+            </mat-list-item>
+         </mat-nav-list>
+      </mat-drawer>
+      <mat-drawer-content>
+         <div style="text-align: center; min-height: 600px;">
+            <router-outlet></router-outlet>
+         </div>
+      </mat-drawer-content>
+   </mat-drawer-container>
+</div>
+
+<div *ngIf="!isMenuVisible" style="text-align: center; min-height: 600px;">
+   <router-outlet></router-outlet>
+</div>

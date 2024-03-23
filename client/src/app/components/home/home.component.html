@@ -1,0 +1,19 @@
+<div class="main-container">
+  <div class="user-home">
+   <div class="user-profile">
+      <img [src]="userImage" class="user-image">
+   </div>
+     <div class="mt-5">
+        <h2>Welcome {{userData.name}}</h2>
+        <h2>Email: {{userData.email}}</h2>
+     </div>
+     <button (click)="uploadClicked()" mat-flat-button color="primary">Change Profile</button>
+     <form class="mt-2" *ngIf="showUploadBox">
+      <label class="custom-file-input">
+        <span>Choose File</span>
+        <input class="image-file" type="file" (change)="UploadImage($event)">
+      </label>
+    </form>
+  </div>
+</div>
+

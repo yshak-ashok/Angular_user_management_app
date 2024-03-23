@@ -1,0 +1,45 @@
+.main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+
+.img-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-3xl{
+  font-size: x-large;
+}
+.user-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+/* Style the custom file input container */
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #4CAF50;
+}
+
+/* Style the custom file input when a file is chosen */
+.custom-file-input input[type="file"]:not(:disabled) + span::before {
+  content: 'Change File';
+}
+
+/* Style the file input to be visually hidden */
+.custom-file-input input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
